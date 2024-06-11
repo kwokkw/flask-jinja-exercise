@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/statics/base.css" />
+    <title>{% block title%} Homepage {% endblock%}</title>
+  </head>
+  <body>
+    {% block content %}
+    <h1>Madlibs</h1>
+    <form action="/story">
+      {% for prompt in story_prompts %}
+      <label for="{{prompt}}"
+        >{{prompt}}: <input name="{{prompt}}" type="text" />
+      </label>
+      {% endfor %}
+      <button>Submit</button>
+    </form>
+    {% endblock %}
+  </body>
+</html>
